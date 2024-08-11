@@ -244,6 +244,7 @@ window.addEventListener('load', () => {
   })
 
   const input = document.querySelector('#local-search-input input')
+  const container = document.getElementById('local-search-results')
   const statsItem = document.getElementById('local-search-stats-wrap')
   const $loadingStatus = document.getElementById('loading-status')
   const isXml = !path.endsWith('json')
@@ -254,7 +255,6 @@ window.addEventListener('load', () => {
     isXml && (searchText = searchText.replace(/</g, '&lt;').replace(/>/g, '&gt;'))
     if (searchText !== '') $loadingStatus.innerHTML = '<i class="fas fa-spinner fa-pulse"></i>'
     const keywords = searchText.split(/[-\s]+/)
-    const container = document.getElementById('local-search-results')
     let resultItems = []
     if (searchText.length > 0) {
     // Perform local searching
@@ -326,11 +326,27 @@ window.addEventListener('load', () => {
     btf.overflowPaddingR.remove()
     btf.animateOut($searchDialog, 'search_close .5s')
     btf.animateOut($searchMask, 'to_hide 0.5s')
+
+    input.value = ''
+    container.textContent = ''
+    statsItem.textContent = ''
+
     window.removeEventListener('resize', fixSafariHeight)
   }
 
   const searchClickFn = () => {
     btf.addEventListenerPjax(document.querySelector('#search-button > .search'), 'click', openSearch)
+  }
+
+  const searchShortCut = () => {
+    document.addEventListener('keydown', function(event) {
+      // 檢查是否按下了 Ctrl 鍵和 K 鍵
+      if (event.ctrlKey && event.key === 'k') {
+          // 阻止瀏覽器預設行為（如在某些瀏覽器中開啟搜尋或其他快捷方式）
+          event.preventDefault();
+          openSearch()
+        }
+    });
   }
 
   const searchFnOnce = () => {
@@ -349,6 +365,7 @@ window.addEventListener('load', () => {
   })
 
   searchClickFn()
+  searchShortCut()
   searchFnOnce()
 
   // pjax
