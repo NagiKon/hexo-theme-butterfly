@@ -17,7 +17,10 @@ nav:
   fixed: false
 
 menu:
-  # Home: / || fas fa-home
+  首頁: / || fas fa-home
+  時間軸: /archives/ || fas fa-archive
+  標籤: /tags/ || fas fa-tags
+  分類: /categories/ || fas fa-folder-open
   # List||fas fa-list:
   #   Music: /music/ || fas fa-music
   #   Movie: /movies/ || fas fa-video
@@ -28,8 +31,8 @@ menu:
 
 code_blocks:
   # Code block theme: darker / pale night / light / ocean / false
-  theme: light
-  macStyle: false
+  theme: darker
+  macStyle: true
   # Code block height limit (unit: px)
   height_limit: false
   word_wrap: false
@@ -45,21 +48,23 @@ code_blocks:
 # Formal:
 #   icon: link || the description || color
 social:
-  # fab fa-github: https://github.com/xxxxx || Github || '#24292e'
-  # fas fa-envelope: mailto:xxxxxx@gmail.com || Email || '#4a7dbe'
+  fab fa-github: https://github.com/treevel || GitHub || '#ffffff'
+  fa-brands fa-linkedin: https://www.linkedin.com/in/treevel || LinkedIn || '#ffffff'
+  fas fa-envelope: mailto:treevel.github@gmail.com || Email || '#ffffff'
 
 # --------------------------------------
 # Image Settings
 # --------------------------------------
 
-favicon: /img/favicon.png
+# Favicon（網站圖標）
+favicon: /img/site_logo.webp
 
 avatar:
-  img: /img/butterfly-icon.png
+  img: /img/avatar.webp
   effect: false
 
 # Disable all banner images
-disable_top_img: false
+disable_top_img: true
 
 # If the banner of page not setting, it will show the default_top_img
 default_top_img:
@@ -95,23 +100,23 @@ background:
 
 cover:
   # Disable the cover or not
-  index_enable: true
-  aside_enable: true
-  archives_enable: true
+  index_enable: false
+  aside_enable: false
+  archives_enable: false
   # When cover is not set, the default cover is displayed
   default_cover:
     # - xxx.jpg
 
 # Replace Broken Images
 error_img:
-  flink: /img/friend_404.gif
-  post_page: /img/404.jpg
+  flink: /img/404.webp
+  post_page: /img/404.webp
 
 # A simple 404 page
 error_404:
-  enable: false
-  subtitle: 'Page Not Found'
-  background: /img/error-page.png
+  enable: true
+  subtitle: ' 此頁面不存在'
+  background: /img/404.webp
 
 post_meta:
   # Home Page
@@ -192,13 +197,13 @@ toc:
   post: true
   page: false
   number: true
-  expand: false
+  expand: true
   # Only for post
   style_simple: false
-  scroll_percent: true
+  scroll_percent: false
 
 post_copyright:
-  enable: true
+  enable: false
   decode: false
   author_href:
   license: CC BY-NC-SA 4.0
@@ -230,13 +235,14 @@ related_post:
   # Number of posts displayed
   limit: 6
   # Choose: created / updated
-  date_type: created
+  date_type: updated
 
 # Choose: 1 / 2 / false
 # 1: The 'next post' will link to old post
 # 2: The 'next post' will link to new post
 # false: disable pagination
-post_pagination: 1
+post_pagination: 2
+pagination_cover: /img/pagination_cover.webp
 
 # Displays outdated notice for a post
 noticeOutdate:
@@ -255,11 +261,11 @@ noticeOutdate:
 # --------------------------------------
 footer:
   owner:
-    enable: true
-    since: 2019
+    enable: false
+    since: 2020
   custom_text:
   # Copyright of theme and framework
-  copyright: true
+  copyright: false
 
 # --------------------------------------
 # Aside Settings
@@ -281,12 +287,12 @@ aside:
     enable: true
     description:
     button:
-      enable: true
+      enable: false
       icon: fab fa-github
       text: Follow Me
       link: https://github.com/xxxxxx
   card_announcement:
-    enable: true
+    enable: false
     content: This is my Blog
   card_recent_post:
     enable: true
@@ -305,17 +311,17 @@ aside:
   card_categories:
     enable: true
     # If set 0 will show all
-    limit: 8
+    limit: 0
     # Choose: none / true / false
     expand: none
     sort_order:
   card_tags:
     enable: true
     # If set 0 will show all
-    limit: 40
-    color: false
+    limit: 0
+    color: true
     # Order of tags, random/name/length
-    orderby: random
+    orderby: name
     # Sort of order. 1, asc for ascending; -1, desc for descending
     order: 1
     sort_order:
@@ -324,7 +330,7 @@ aside:
     # Type: monthly / yearly
     type: monthly
     # Eg: YYYY年MM月
-    format: MMMM YYYY
+    format: YYYY MMMM
     # Sort of order. 1, asc for ascending; -1, desc for descending
     order: -1
     # If set 0 will show all
@@ -341,7 +347,7 @@ aside:
   card_webinfo:
     enable: true
     post_count: true
-    last_push_date: true
+    last_push_date: false
     sort_order:
     # Time difference between publish date and now
     # Formal: Month/Day/Year Time or Year/Month/Day Time
@@ -370,7 +376,7 @@ translate:
   msgToSimplifiedChinese: '簡'
 
 # Read Mode
-readmode: true
+readmode: false
 
 # Dark Mode
 darkmode:
@@ -412,11 +418,11 @@ anchor:
 photofigcaption: false
 
 copy:
-  enable: true
+  enable: false
   # Add the copyright information after copied content
   copyright:
     enable: false
-    limit_count: 150
+    limit_count: 50
 
 # Need to install the hexo-wordcount plugin
 wordcount:
@@ -465,7 +471,7 @@ math:
 search:
   # Choose: algolia_search / local_search / docsearch
   # leave it empty if you don't need search
-  use:
+  use: local_search
   placeholder:
 
   # Algolia Search
@@ -476,7 +482,7 @@ search:
   # Local Search
   local_search:
     # Preload the search data when the page loads.
-    preload: false
+    preload: true
     # Show top n results per article, show all results by setting to -1
     top_n_per_article: 1
     # Unescape html strings to the readable one.
@@ -498,7 +504,7 @@ search:
 share:
   # Choose: sharejs / addtoany
   # Leave it empty if you don't need share
-  use: sharejs
+  use:
 
   # Share.js
   # https://github.com/overtrue/share.js
@@ -521,7 +527,7 @@ comments:
   # Format of two comments system : Disqus,Waline
   use:
   # Display the comment name next to the button
-  text: true
+  text: false
   # Lazyload: The comment system will be load when comment element enters the browser's viewport.
   # If you set it to true, the comment count will be invalid
   lazyload: false
@@ -584,12 +590,12 @@ waline:
 # Utterances
 # https://utteranc.es/
 utterances:
-  repo:
+  repo: treevel/treevel.github.io
   # Issue Mapping: pathname/url/title/og:title
   issue_term: pathname
   # Theme: github-light/github-dark/github-dark-orange/icy-dark/dark-blue/photon-dark
-  light_theme: github-light
-  dark_theme: photon-dark
+  light_theme: github-dark
+  dark_theme: github-dark
   js:
   option:
 
@@ -678,7 +684,7 @@ crisp:
 baidu_analytics:
 
 # https://analytics.google.com/analytics/web/
-google_analytics:
+google_analytics: G-34GCMGPCS5
 
 # https://www.cloudflare.com/zh-tw/web-analytics/
 cloudflare_analytics:
@@ -740,22 +746,22 @@ site_verification:
 # Notice: color value must in double quotes like "#000" or may cause error!
 
 # theme_color:
-#   enable: true
-#   main: "#49B1F5"
-#   paginator: "#00c4b6"
-#   button_hover: "#FF7242"
-#   text_selection: "#00c4b6"
-#   link_color: "#99a9bf"
-#   meta_color: "#858585"
-#   hr_color: "#A4D8FA"
-#   code_foreground: "#F47466"
-#   code_background: "rgba(27, 31, 35, .05)"
-#   toc_color: "#00c4b6"
-#   blockquote_padding_color: "#49b1f5"
-#   blockquote_background_color: "#49b1f5"
-#   scrollbar_color: "#49b1f5"
-#   meta_theme_color_light: "ffffff"
-#   meta_theme_color_dark: "#0d0d0d"
+  enable: true
+  main: "#3a8ac0"
+  paginator: "#0050ac"
+  button_hover: "#1bd364"
+  text_selection: "#00c4b6"
+  link_color: "#5fa0fa"
+  meta_color: "#858585"
+  hr_color: "#a4d8fa"
+  code_foreground: "#f7844a"
+  code_background: "rgba(27, 31, 35, .05)"
+  toc_color: "#006d66"
+  blockquote_padding_color: "#49b1f5"
+  blockquote_background_color: "#49b1f5"
+  scrollbar_color: "#49b1f5"
+  meta_theme_color_light: "ffffff"
+  meta_theme_color_dark: "#0d0d0d"
 
 # The user interface setting of category and tag page
 # Choose: index - same as Homepage UI / default - same as archives UI
@@ -766,13 +772,13 @@ tag_ui:
 # Rounded corners for UI elements
 rounded_corners_ui: true
 
-# Stretches the lines so that each line has equal width
-text_align_justify: false
+# Stretches the lines so that each line has equal width（文字向兩側對齊，對最後一行無效）
+text_align_justify: true
 
 # Add a mask to the header and footer
 mask:
-  header: true
-  footer: true
+  header: false
+  footer: false
 
 # Loading Animation
 preloader:
@@ -785,10 +791,10 @@ preloader:
   pace_css_url:
 
 # Page Transition
-enter_transitions: true
+enter_transitions: false
 
 # Default display mode - light (default) / dark
-display_mode: light
+display_mode: dark
 
 # Configuration for beautifying the content of the article
 beautify:
@@ -815,7 +821,7 @@ blog_title_font:
 
 # The setting of divider icon
 hr_icon:
-  enable: true
+  enable: false
   # The unicode value of Font Awesome icon, such as '\3423'
   icon:
   icon_top:
@@ -916,9 +922,9 @@ abcjs:
 # Mermaid
 # https://github.com/mermaid-js/mermaid
 mermaid:
-  enable: false
+  enable: true
   # Write Mermaid diagrams using code blocks
-  code_write: false
+  code_write: true
   # built-in themes: default / forest / dark / neutral
   theme:
     light: default
@@ -931,7 +937,7 @@ note:
   #  - modern    bs-callout new (v2-v3) alert style.
   #  - flat      flat callout style with background, like on Mozilla or StackOverflow.
   #  - disabled  disable all CSS styles import of note tag.
-  style: flat
+  style: modern
   icons: true
   border_radius: 3
   # Offset lighter of background in % for modern and flat styles (modern: -12 | 12; flat: -18 | 6).
@@ -958,8 +964,8 @@ aplayerInject:
 # https://github.com/polonel/SnackBar
 # position: top-left / top-center / top-right / bottom-left / bottom-center / bottom-right
 snackbar:
-  enable: false
-  position: bottom-left
+  enable: true
+  position: bottom-right
   # The background color of Toast Notification in light mode and dark mode
   bg_light: '#49b1f5'
   bg_dark: '#1f1f1f'
@@ -1015,7 +1021,9 @@ css_prefix: true
 # Insert the code to head (before '</head>' tag) and the bottom (before '</body>' tag)
 inject:
   head:
-    # - <link rel="stylesheet" href="/xxx.css">
+    - <link rel="preconnect", href="https://fonts.googleapis.com">
+    - <link rel="preconnect", href="https://fonts.gstatic.com" crossorigin="anonymous">
+    - <link rel="stylesheet", href="https://fonts.googleapis.com/css2?family=Faustina:wght@600&family=Noto+Sans+TC&display=swap">
   bottom:
     # - <script src="xxxx"></script>
 

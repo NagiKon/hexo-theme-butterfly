@@ -5,22 +5,23 @@ $light-orange = #FF7242
 $light-red = #F47466
 $themeColorEnable = hexo-config('theme_color') && hexo-config('theme_color.enable')
 $theme-color = $themeColorEnable && hexo-config('theme_color.main') ? convert(hexo-config('theme_color.main')) : $bright-blue
-$theme-paginator-color = $themeColorEnable && hexo-config('theme_color.paginator') ? convert(hexo-config('theme_color.paginator')) : $strong-cyan
-$theme-text-selection-color = $themeColorEnable && hexo-config('theme_color.text_selection') ? convert(hexo-config('theme_color.text_selection')) : $strong-cyan
+$theme-paginator-color = $themeColorEnable && hexo-config('theme_color.paginator') ? convert(hexo-config('theme_color.paginator')) : $bright-blue
+$theme-text-selection-color = $themeColorEnable && hexo-config('theme_color.text_selection') ? convert(hexo-config('theme_color.text_selection')) : $bright-blue
 $theme-link-color = $themeColorEnable && hexo-config('theme_color.link_color') ? convert(hexo-config('theme_color.link_color')) : $bright-blue
 $theme-hr-color = $themeColorEnable && hexo-config('theme_color.hr_color') ? convert(hexo-config('theme_color.hr_color')) : $bright-blue
 $code-foreground = $themeColorEnable && hexo-config('theme_color.code_foreground') ? convert(hexo-config('theme_color.code_foreground')) : $light-red
 $code-background = $themeColorEnable && hexo-config('theme_color.code_background') ? convert(hexo-config('theme_color.code_background')) : rgba(27, 31, 35, .05)
-$theme-toc-color = $themeColorEnable && hexo-config('theme_color.toc_color') ? convert(hexo-config('theme_color.toc_color')) : $strong-cyan
+$theme-toc-color = $themeColorEnable && hexo-config('theme_color.toc_color') ? convert(hexo-config('theme_color.toc_color')) : $bright-blue
 // font
 
 $chinseFont = $language == 'zh-CN' ? 'Microsoft YaHei' : 'Microsoft JhengHei'
-$dafault-font-family = -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Lato, Roboto, 'PingFang SC', $chinseFont, sans-serif
-$dafault-code-font = consolas, Menlo, 'PingFang SC', $chinseFont, sans-serif
+$default-font-family = Faustina, 'Noto Sans TC', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Lato, Roboto, 'PingFang SC', $chinseFont, sans-serif
+$default-code-font = Consolas, 'Courier New', monospace, Menlo, 'PingFang SC', $chinseFont, sans-serif
 
-$font-family = hexo-config('font.font_family') ? unquote(hexo-config('font.font_family')) : $dafault-font-family
-$code-font-family = hexo-config('font.code_font_family') ? unquote(hexo-config('font.code_font_family')) : $dafault-code-font
+$font-family = hexo-config('font.font_family') ? unquote(hexo-config('font.font_family')) : $default-font-family
+$code-font-family = hexo-config('font.code_font_family') ? unquote(hexo-config('font.code_font_family')) : $default-code-font
 $site-name-font = hexo-config('blog_title_font.font_family') && unquote(hexo-config('blog_title_font.font_family'))
+$letter-spacing = 0.07rem
 // hr
 $hrEnable = hexo-config('hr_icon') && hexo-config('hr_icon.enable')
 $hr-icon = $hrEnable && hexo-config('hr_icon.icon') ? hexo-config('hr_icon.icon') : '\f0c4'
@@ -30,7 +31,7 @@ $beautifyEnable = hexo-config('beautify.enable')
 $title-prefix-icon = $beautifyEnable && hexo-config('beautify.title_prefix_icon') ? hexo-config('beautify.title_prefix_icon') : '\f0c1'
 $title-prefix-icon-color = $beautifyEnable && hexo-config('beautify.title_prefix_icon_color') ? convert(hexo-config('beautify.title_prefix_icon_color')) : $light-red
 // Global Variables
-$font-size = hexo-config('font.global_font_size') ? convert(hexo-config('font.global_font_size')) : 14px
+$font-size = hexo-config('font.global_font_size') ? convert(hexo-config('font.global_font_size')) : 16px
 $code-font-size = hexo-config('font.code_font_size') ? convert(hexo-config('font.code_font_size')) : var(--global-font-size)
 $font-color = #1F2D3D
 $text-line-height = 2
@@ -44,7 +45,7 @@ $grey = #858585
 $dark-grey = #cacaca
 $white = #FFFFFF
 $whitesmoke = #f5f5f5
-$font-black = #4C4948
+$font-black = #000000
 $card-bg = $white
 $text-highlight-color = $font-color
 $text-hover = $theme-color
@@ -83,7 +84,7 @@ $reward-pop-up-color = #858585
 $search-bg = #f6f8fa
 $search-input-color = $font-black
 $search-color = $theme-color
-$search-keyword-highlight = #F47466
+$search-keyword-highlight = #c0473a
 $search-a-color = $font-black
 // comments
 $comments-switch-first-text = $bright-blue

@@ -35,23 +35,10 @@ mixin rightsideItem(array)
   - const hideArray = enable ? hide && hide.split(',') : ['readmode','translate','darkmode','hideAside']
   - const showArray = enable ? show && show.split(',') : ['toc','chat','comment']
 
-  
   #rightside-config-hide
     if hideArray
       +rightsideItem(hideArray)
   #rightside-config-show
-    if enable
-      if hide
-        button#rightside-config(type="button" title=_p("rightside.setting"))
-          i.fas.fa-cog.fa-spin
-    else
-      if is_post()
-        if (readmode || translate.enable || (darkmode.enable && darkmode.button))
-          button#rightside-config(type="button" title=_p("rightside.setting"))
-            i.fas.fa-cog.fa-spin
-      else if translate.enable || (darkmode.enable && darkmode.button)
-        button#rightside-config(type="button" title=_p("rightside.setting"))
-          i.fas.fa-cog.fa-spin
 
     if showArray
       +rightsideItem(showArray)

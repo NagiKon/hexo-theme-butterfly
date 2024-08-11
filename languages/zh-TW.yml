@@ -15,7 +15,7 @@ page:
 
 card_post_count: 則評論
 
-no_title: 無標題
+no_title: 無題
 
 post:
   created: 發表於
@@ -63,7 +63,7 @@ aside:
     headline: 網站資訊
     article_name: 文章數量
     runtime:
-      name: 運行時間
+      name: 已運行時間
       unit: 天
     last_push_date:
       name: 最後更新時間
@@ -73,9 +73,9 @@ aside:
   more_button: 檢視更多
   card_newest_comments:
     headline: 最新評論
-    loading_text: 載入中...
-    error: 無法獲取評論，請確認相關配置是否正確
-    zero: 尚無評論
+    loading_text: 正在載入中...
+    error: 無法取得評論，請確認相關組態是否正確
+    zero: 沒有評論
     image: 圖片
     link: 連結
     code: 程式碼
@@ -89,16 +89,16 @@ date_suffix:
   day: 天前
   month: 個月前
 
-donate: 贊助
+donate: 斗內
 share: 分享
 
 rightside:
   readmode_title: 閱讀模式
-  translate_title: 繁簡轉換
-  night_mode_title: 日夜模式切換
-  back_to_top: 回到頂端
+  translate_title: 簡繁切換
+  night_mode_title: 淺色和深色模式切換
+  back_to_top: 回到最上方
   toc: 目錄
-  scroll_to_comment: 前往評論
+  scroll_to_comment: 留下評論
   setting: 設定
   aside: 單欄和雙欄切換
   chat: 聊天
@@ -107,7 +107,7 @@ copy_copyright:
   author: 作者
   link: 連結
   source: 來源
-  info: 著作權歸作者所有。如需商業轉載，請聯絡作者獲得授權，非商業轉載請註明出處。
+  info: 著作權歸作者所有。商業轉載請聯絡作者獲得授權，非商業轉載請註明出處。
 
 Snackbar:
   chs_to_cht: 已切換為繁體中文
@@ -118,4 +118,4 @@ Snackbar:
 loading: 載入中...
 load_more: 載入更多
 
-error404: 找不到頁面
+error404: 沒有找到該頁面
