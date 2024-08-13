@@ -48,6 +48,7 @@ code_blocks:
 # Formal:
 #   icon: link || the description || color
 social:
+  fa-brands fa-facebook: https://www.facebook.com/what.is.something.you.should.have/ || Facebook || '#ffffff'
   fab fa-github: https://github.com/treevel || GitHub || '#ffffff'
   fa-brands fa-linkedin: https://www.linkedin.com/in/treevel || LinkedIn || '#ffffff'
   fas fa-envelope: mailto:treevel.github@gmail.com || Email || '#ffffff'
